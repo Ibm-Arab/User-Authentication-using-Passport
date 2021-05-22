@@ -21,6 +21,7 @@ const signUpAs = require('./controllers/signUp');
 const login = require('./routes/login');
 const logIn = require('./controllers/logIn');
 const logOut = require('./controllers/logOut');
+const users = require('./routes/users');
 
 //For fetching the posted data
 app.use(express.urlencoded({extended:false}));
@@ -57,6 +58,7 @@ app.post('/login/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }));
+app.get('/users',users);
 app.get('/logout',logOut);
 app.use('/',pageNotFound);
 
@@ -75,3 +77,18 @@ mongoose
 .catch(err => {
     console.log(err);
 })
+
+/*
+{
+    "name":"Ibrahim Arab",
+    "gender":"Male",
+    "email":"ibmarab@gmail.com",
+    "number":"898393893",
+    "role":"worker",
+    "pwd":"12345"
+}
+{
+    "email":"ibmarab2@gmail.com",
+    "password":"12345"
+}
+*/

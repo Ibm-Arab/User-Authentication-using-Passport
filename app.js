@@ -77,18 +77,3 @@ mongoose
 .catch(err => {
     console.log(err);
 })
-
-/*
-{
-    "name":"Ibrahim Arab",
-    "gender":"Male",
-    "email":"ibmarab@gmail.com",
-    "number":"898393893",
-    "role":"worker",
-    "pwd":"12345"
-}
-{
-    "email":"ibmarab2@gmail.com",
-    "password":"12345"
-}
-*/
